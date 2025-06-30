@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import HttpResponseForbidden
 
-ALLOWED_SIGNUP_IPS = ['127.0.0.1']
+ALLOWED_SIGNUP_IPS = ['152.58.163.105']
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
