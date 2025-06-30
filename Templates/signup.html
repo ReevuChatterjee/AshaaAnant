@@ -64,8 +64,14 @@
       flex-direction: column;
       gap: 1.3rem;
     }
+    .name-row {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+    }
     .input-group {
       width: 100%;
+      flex: 1;
     }
     label {
       display: block;
@@ -128,7 +134,7 @@
     .footer a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .main-header {
         font-size: 1.4rem;
         margin-bottom: 1rem;
@@ -140,6 +146,10 @@
       .signup-title {
         font-size: 1.1rem;
       }
+      .name-row {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -149,9 +159,15 @@
     <div class="paw-icon">&#128062;&#128062;</div>
     <div class="signup-title">Create Your Account</div>
     <form>
-      <div class="input-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="Your full name" required />
+      <div class="name-row">
+        <div class="input-group">
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" placeholder="First name" required />
+        </div>
+        <div class="input-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" placeholder="Last name" required />
+        </div>
       </div>
       <div class="input-group">
         <label for="email">Email</label>
