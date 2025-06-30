@@ -4,6 +4,17 @@ import uuid
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.http import HttpResponseForbidden
+
+ALLOWED_SIGNUP_IPS = ['127.0.0.1']
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        # Handles multiple IPs (first is original client)
+        ip = x_forwarded_for.split(',')[0].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
 
 def home(request):
     return render(request,'home.html')
@@ -67,6 +78,10 @@ def login_view(request):
     return render(request,'login.html')
 
 def signup(request):
+    client_ip = get_client_ip(request)
+    print("Client IP:", client_ip)
+    if client_ip not in ALLOWED_SIGNUP_IPS:
+        return HttpResponseForbidden("Access denied. You are not allowed to access this page.")
     if request.method=="POST":
         fname=request.POST.get('first_name')
         lname=request.POST.get('last_name')
