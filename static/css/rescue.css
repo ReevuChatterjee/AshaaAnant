@@ -14,48 +14,101 @@
       box-sizing: border-box;
     }
 
+    .navbar {
+  background-color: #ffeac2;
+  border-bottom: 2px solid #ffd699;
+  margin-top: 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0;
+  gap: 2rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #8a6b2f;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #c1913a;
+}
+
+
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-light);
     }
 
     /* Top Header Bar */
-    .header-bar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--header-bg);
-      padding: 1.2rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: var(--shadow);
-      z-index: 1000;
-    }
+    .hero {
+  background: #fff5e1;
+  border-bottom: 1px solid #ffdf99;
+  padding: 0.4rem 0;
+}
 
-    .header-left img {
-      height: 60px;
-    }
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1.5rem;
+}
 
-    .header-center {
-      text-align: center;
-      flex: 1;
-      margin-right: 60px; /* space to center-align properly */
-    }
+.hero-logo {
+  flex: 1;
+}
 
-    .header-center h1 {
-      font-size: 1.6rem;
-      color: #223344;
-    }
+.hero-title {
+  flex: 2;
+  text-align: center;
+}
 
-    .header-center p {
-      font-size: 0.95rem;
-      color: #445566;
-    }
+.hero-spacer {
+  flex: 1;
+}
+
+/* Optional: Make it responsive */
+@media (max-width: 768px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .hero-logo, .hero-title, .hero-spacer {
+    flex: unset;
+  }
+}
+
+
+.logo-fixed {
+  height: 100px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hero-text h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #c1913a;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  color: #7c5a28;
+}
 
     /* Main Content */
     .main {
-      padding: 9rem 2rem 2rem;
+      padding: 2.5rem 2rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
     }
