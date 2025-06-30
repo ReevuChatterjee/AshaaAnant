@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rescue - Ashaa Anant</title>
+  <link rel="stylesheet" href="{% static 'css/rescue.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Header Bar -->
+  <div class="header-bar">
+    <div class="header-left">
+      <img src="{% static 'images/logo.png' %}" alt="Ashaa Anant Logo">
+    </div>
+    <div class="header-center">
+      <h1>🐾 Ashaa Anant</h1>
+      <p>Welfare for Dogs and Domesticated Friends</p>
+    </div>
+  </div>
+
+  <!-- Main Rescue Form Section -->
+  <main class="main">
+    <div class="section-title">
+      <h2>Report a Rescue</h2>
+    </div>
+
+    <div class="card">
+      <form id="rescueForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="contactName">Contact Person Name</label>
+            <input type="text" id="contactName" name="contactName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" required />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address">Location / Address</label>
+            <textarea id="address" name="address" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="animalType">Type of Animal</label>
+            <select id="animalType" name="animalType" required>
+              <option value="">Select animal</option>
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Cow</option>
+              <option>Bird</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="photo">Photo (Optional)</label>
+            <input type="file" id="photo" name="photo" accept="image/*" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="issue">Issue Faced</label>
+            <textarea id="issue" name="issue" placeholder="Describe the issue..." required></textarea>
+          </div>
+        </div>
+
+        <button type="submit">Submit Rescue Report</button>
+        <p class="message" id="confirmationMessage"></p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('rescueForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirmationMessage').textContent = "✅ Rescue request submitted successfully!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
