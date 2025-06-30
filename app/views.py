@@ -21,6 +21,10 @@ def submitRescueReport(request):
     
     return redirect('rescue')
 
+def view_complaints(request):
+    reports = RescueDB.objects.all().order_by('-timestamp')
+    return render(request, 'view_complaints.html', {'reports': reports})
+
 def adoption(request):
     return HttpResponse("ADOPTION")
 

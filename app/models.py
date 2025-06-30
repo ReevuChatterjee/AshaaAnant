@@ -7,6 +7,9 @@ class RescueDB(models.Model):
     type=models.CharField()
     photo=models.ImageField(upload_to='Rescue_Photo/', default='default.png', blank=True)
     issueFaced=models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.contactName} - {self.type} - {self.timestamp.strftime('%Y-%m-%d %H:%M')}"
 
 # Create your models here.

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complaints Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/complaints.css' %}">
+</head>
+<body>
+  <h1>🐾 Rescue Complaints Dashboard</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Contact Name</th>
+        <th>Number</th>
+        <th>Animal Type</th>
+        <th>Address</th>
+        <th>Issue</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for report in reports %}
+      <tr>
+        <td>{{ report.timestamp }}</td>
+        <td>{{ report.contactName }}</td>
+        <td>{{ report.contactNumber }}</td>
+        <td>{{ report.type }}</td>
+        <td>{{ report.location }}</td>
+        <td>{{ report.issueFaced }}</td>
+        <td>
+          {% if report.photo %}
+            <img src="{{ report.photo.url }}" alt="photo" width="80" />
+          {% else %}
+            No photo
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
