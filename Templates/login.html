@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Nunito', Arial, sans-serif;
+      background: linear-gradient(135deg, #f9e7ce 0%, #fdf6ec 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .main-header {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #6c4312;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(244, 185, 66, 0.07);
+      font-family: 'Nunito', Arial, sans-serif;
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(44, 33, 20, 0.10);
+      padding: 3rem 2.5rem 2.5rem 2.5rem;
+      width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+    .login-card:hover {
+      box-shadow: 0 8px 32px rgba(44, 33, 20, 0.15);
+    }
+    .paw-icon {
+      font-size: 2.5rem;
+      color: #3a244a;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.2em;
+      display: flex;
+      justify-content: center;
+    }
+    .login-title {
+      color: #6c4312;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+    .input-group {
+      position: relative;
+      width: 100%;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #6c5c3c;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid #f6e4c7;
+      border-radius: 10px;
+      background: #fdf6ef;
+      font-size: 1.08rem;
+      color: #6c5c3c;
+      transition: border 0.2s;
+      box-sizing: border-box;
+      display: block;
+    }
+    input[type="email"]:focus, input[type="password"]:focus {
+      border: 1.5px solid #f4b942;
+      outline: none;
+      background: #fffbe9;
+    }
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(90deg, #f4b942 60%, #fbe3a2 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1.15rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.6rem;
+      box-shadow: 0 2px 8px rgba(244, 185, 66, 0.07);
+    }
+    .login-btn:hover {
+      background: linear-gradient(90deg, #f4b942 80%, #f7c873 100%);
+    }
+    .footer {
+      margin-top: 1.4rem;
+      font-size: 1.05rem;
+      color: #a18b6c;
+      text-align: center;
+    }
+    .footer a {
+      color: #f4b942;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 0.2em;
+      transition: text-decoration 0.2s;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 500px) {
+      .main-header {
+        font-size: 1.4rem;
+        margin-top: 1.2rem;
+        margin-bottom: 0.7rem;
+      }
+      .login-card {
+        width: 98vw;
+        padding: 1.2rem 0.7rem 1.5rem 0.7rem;
+      }
+      .login-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-header">Aashaa Anant</div>
+  <div class="login-card">
+    <div class="paw-icon">
+      &#128062;&#128062;
+    </div>
+    <div class="login-title">Login to Your Account</div>
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="footer">
+      New here? <a href="/staffsignup">Sign up</a>
+    </div>
+  </div>
+</body>
+</html>

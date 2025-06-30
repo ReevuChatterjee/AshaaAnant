@@ -26,11 +26,17 @@ def view_complaints(request):
     return render(request, 'view_complaints.html', {'reports': reports})
 
 def adoption(request):
-    return HttpResponse("ADOPTION")
+    return render(request,'adoption.html')
 
 def donate(request):
-    return HttpResponse("DONATE")
+    return render(request,'donation.html')
 
 def volunteer(request):
-    return HttpResponse("VOLUNTEER")
+    return render(request,'volunteer.html')
+
+def login(request):
+    return render(request,'login.html')
+
+def signup(request):
+    return render(request,'signup.html')
 # Create your views here.
