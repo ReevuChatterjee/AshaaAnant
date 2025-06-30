@@ -79,9 +79,8 @@ def login_view(request):
 
 def signup(request):
     client_ip = get_client_ip(request)
-    print("Client IP:", client_ip)
     if client_ip not in ALLOWED_SIGNUP_IPS:
-        return HttpResponseForbidden("Access denied. You are not allowed to access this page.")
+        return HttpResponseForbidden(f"Access denied. Detected IP: {client_ip}. You are not allowed to access this page.")
     if request.method=="POST":
         fname=request.POST.get('first_name')
         lname=request.POST.get('last_name')
