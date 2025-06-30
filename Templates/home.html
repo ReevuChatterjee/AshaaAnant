@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashaa Anant - Animal Welfare NGO</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="main-content">
+
+        <!-- Header -->
+        <header class="hero">
+  <div class="container hero-flex">
+    
+    <!-- Logo aligned left -->
+    <div class="hero-logo">
+      <img src="{% static 'images/logo.png' %}" alt="Ashaa Anant Logo" class="logo-fixed" />
+    </div>
+
+    <!-- Title and subtitle centered -->
+    <div class="hero-title">
+      <h1>🐾 Ashaa Anant</h1>
+      <p>Welfare for Dogs and Domesticated Friends</p>
+    </div>
+
+    <!-- Spacer to balance layout -->
+    <div class="hero-spacer"></div>
+  </div>
+</header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-list container">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Rescue</a></li>
+            <li><a href="#">Adoption</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Volunteer</a></li>
+            </ul>
+        </nav>
+
+        <!-- Dashboard Cards -->
+        <main class="dashboard container">
+  <div class="card" data-aos="zoom-in">
+    <div class="card-image">
+      <img src="{% static 'images/rescue.jpg' %}" alt="Rescued Animals">
+    </div>
+    <h2>🐶 Rescued Animals</h2>
+    <p><span class="count" data-target="128">0</span> lives saved</p>
+    <p class="description">
+      Our team actively rescues stray, injured, and abandoned animals, providing them with food, shelter, and medical care.
+    </p>
+  </div>
+
+  <div class="card" data-aos="zoom-in" data-aos-delay="100">
+    <div class="card-image">
+      <img src="{% static 'images/adoption.jpg' %}" alt="Adoptions">
+    </div>
+    <h2>🏡 Adoptions</h2>
+    <p><span class="count" data-target="89">0</span> forever homes</p>
+    <p class="description">
+      We ensure that each rescued animal finds a loving home through a verified, responsible adoption process.
+    </p>
+  </div>
+
+  <div class="card" data-aos="zoom-in" data-aos-delay="200">
+    <div class="card-image">
+      <img src="{% static 'images/donations.jpg' %}" alt="Donations">
+    </div>
+    <h2>💝 Donations</h2>
+    <p>₹<span class="count" data-target="240000">0</span> this quarter</p>
+    <p class="description">
+      Your donations directly support food, veterinary care, and shelter for hundreds of animals under our care.
+    </p>
+  </div>
+
+  <div class="card" data-aos="zoom-in" data-aos-delay="300">
+    <div class="card-image">
+      <img src="{% static 'images/volunteers.jpg' %}" alt="Volunteers">
+    </div>
+    <h2>🤝 Volunteers</h2>
+    <p><span class="count" data-target="37">0</span> active helpers</p>
+    <p class="description">
+      Our community of passionate volunteers dedicates time to feeding, cleaning, walking, and nurturing rescued animals.
+    </p>
+  </div>
+</main>
+
+
+    </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Ashaa Anant • Made with ❤️ for Animals</p>
+  </footer>
+
+  <script src="{%static 'js/home.js'%}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
+
