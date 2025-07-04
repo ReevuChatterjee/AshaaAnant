@@ -194,9 +194,10 @@ body {
 
 .modal-img {
   width: 100%;
-  max-height: 250px;
+  height: auto;
+  max-height: 400px; /* You can increase further if needed */
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 1rem;
   display: block;
-  margin: 0 auto 1rem auto;
 }
