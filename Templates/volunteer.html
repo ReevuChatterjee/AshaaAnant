@@ -40,29 +40,48 @@
     <section class="volunteers-section">
       <h2>Meet Our Volunteers</h2>
       <div class="volunteers-grid">
-        {% comment %} Repeat manually for each volunteer {% endcomment %}
 
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol1.jpg' %}" alt="Volunteer 1" class="volunteer-img" />
+        {% for i in "1,2,3,4,5,6,7,8,9,10,11".split(",") %}
+        <div class="volunteer-card" onclick="openModal('modal{{ i }}')">
+          <img src="{% static 'volunteers/vol' %}{{ i }}.jpg" alt="Volunteer {{ i }}" class="volunteer-img" />
           <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 1</div>
-            <div class="volunteer-bio">Loves animals and works on weekend rescues.</div>
+            <div class="volunteer-name">Volunteer {{ i }}</div>
+            <div class="volunteer-bio">Click to learn more.</div>
           </div>
         </div>
 
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol2.jpg' %}" alt="Volunteer 2" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 2</div>
-            <div class="volunteer-bio">Expert in handling injured dogs and giving care.</div>
+        <!-- Modal for Volunteer {{ i }} -->
+        <div id="modal{{ i }}" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal{{ i }}')">&times;</span>
+            <h2>Volunteer {{ i }}</h2>
+            <p><strong>Role:</strong> Community Volunteer</p>
+            <p><strong>Bio:</strong> Passionate animal lover helping rescue and rehabilitate stray animals around the city.</p>
+            <p><strong>Contact:</strong> volunteer{{ i }}@ashaaanant.org</p>
           </div>
         </div>
-
-        <!-- Add remaining 9 volunteer cards the same way -->
+        {% endfor %}
 
       </div>
     </section>
 
   </div>
+
+  <!-- Modal Script -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
