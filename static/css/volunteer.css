@@ -201,3 +201,13 @@ body {
   margin-bottom: 1rem;
   display: block;
 }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+}
