@@ -5,8 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import HttpResponseForbidden
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-ALLOWED_SIGNUP_IPS = ['117.194.55.98']
+ALLOWED_SIGNUP_IPS = os.getenv("ALLOWED_SIGNUP_IPS", "").split(",")
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
