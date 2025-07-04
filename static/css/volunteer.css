@@ -29,9 +29,9 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
   padding: 0.75rem 0;
-  gap: 1.5rem;
+  gap: 2rem; /* Keep the original spacing */
 }
 
 .nav-list a {

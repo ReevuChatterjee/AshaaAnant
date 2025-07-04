@@ -29,9 +29,9 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
   padding: 0.75rem 0;
-  gap: 1rem;
+  gap: 2rem; /* Keep the original spacing */
 }
 
 .nav-list a {
@@ -96,6 +96,8 @@ body {
   padding: 2rem 1rem;
   max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .section-title {
@@ -113,6 +115,8 @@ body {
   border-radius: 1.5rem;
   box-shadow: var(--shadow);
   padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-grid {
@@ -139,6 +143,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 0.8rem;
   background: #f9f9f9;
+  width: 100%;
 }
 
 textarea {
@@ -205,6 +210,12 @@ button:hover {
     padding: 1.5rem;
   }
 
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
   .section-title h2 {
     font-size: 1.6rem;
   }
@@ -229,5 +240,11 @@ button:hover {
   textarea {
     font-size: 0.9rem;
     padding: 0.7rem;
+    width: 100%;
+  }
+
+  .card {
+    padding: 1rem;
+    width: 100%;
   }
 }
