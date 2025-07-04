@@ -12,4 +12,6 @@ urlpatterns = [
     path('stafflogin/',views.login_view,name='stafflogin'),
     path('staffsignup/',views.signup,name='staffsignup'),
     path('logout/', views.logout_view, name='logout'),
+    path('export-pdf/', views.export_complaints_pdf, name='export_pdf'),
+
 ]
