@@ -98,7 +98,7 @@
     <section class="volunteers-section">
       <h2>Meet Our Volunteers</h2>
       <div class="volunteers-grid">
-        {% for i in "1 2 3 4 5 6 7 8 9 10 11".split %}
+        {% for i in "1,2,3,4,5,6,7,8,9,10,11"|cut:"," %}
         <div class="volunteer-card">
           <img src="{% static 'images/volunteers/vol'|add:i|add:'.jpg' %}" alt="Volunteer {{ i }}" class="volunteer-img" />
           <div class="volunteer-info">
