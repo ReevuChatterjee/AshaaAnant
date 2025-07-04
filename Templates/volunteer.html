@@ -9,12 +9,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      🚧
-      <h1>We're Building Something Great</h1>
-      <p>Our website is currently under construction.<br />We'll be here soon with our new awesome site!</p>
+  <div class="main-content">
+
+        <!-- Header -->
+        <header class="hero">
+  <div class="container hero-flex">
+    
+    <!-- Logo aligned left -->
+    <div class="hero-logo">
+      <img src="{% static 'images/logo.png' %}" alt="Ashaa Anant Logo" class="logo-fixed" />
     </div>
+
+    <!-- Title and subtitle centered -->
+    <div class="hero-title">
+      <h1>🐾 Aashaa Anant</h1>
+      <p>Welfare for Dogs and Domesticated Friends</p>
+    </div>
+
+    <!-- Spacer to balance layout -->
+    <div class="hero-spacer"></div>
   </div>
+</header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-list container">
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="{% url 'rescue' %}">Rescue</a></li>
+            <li><a href="{% url 'adoption' %}">Adoption</a></li>
+            <li><a href="{% url 'donate' %}">Donate</a></li>
+            <li><a href="{% url 'volunteer' %}">Volunteer</a></li>
+            </ul>
+        </nav>
 </body>
 </html>
