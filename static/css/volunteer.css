@@ -235,6 +235,10 @@ body {
   .volunteer-bio {
     font-size: 0.9rem;
   }
+
+  .logo-fixed {
+    height: 48px;
+  }
 }
 
 @media (max-width: 480px) {
