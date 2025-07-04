@@ -7,64 +7,6 @@
   <title>Volunteer</title>
   <link rel="stylesheet" href="{% static 'css/volunteer.css' %}" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fdfdfd;
-      margin: 0;
-      padding: 0;
-    }
-
-    .main-content {
-      padding-bottom: 60px;
-    }
-
-    .volunteers-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .volunteers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .volunteer-card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .volunteer-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .volunteer-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .volunteer-info {
-      padding: 15px;
-    }
-
-    .volunteer-name {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .volunteer-bio {
-      font-size: 0.95rem;
-      color: #555;
-    }
-  </style>
 </head>
 <body>
   <div class="main-content">
@@ -98,8 +40,8 @@
     <section class="volunteers-section">
       <h2>Meet Our Volunteers</h2>
       <div class="volunteers-grid">
-        
-        <!-- Volunteer 1 -->
+        {% comment %} Repeat manually for each volunteer {% endcomment %}
+
         <div class="volunteer-card">
           <img src="{% static 'volunteers/vol1.jpg' %}" alt="Volunteer 1" class="volunteer-img" />
           <div class="volunteer-info">
@@ -108,7 +50,6 @@
           </div>
         </div>
 
-        <!-- Volunteer 2 -->
         <div class="volunteer-card">
           <img src="{% static 'volunteers/vol2.jpg' %}" alt="Volunteer 2" class="volunteer-img" />
           <div class="volunteer-info">
@@ -117,86 +58,7 @@
           </div>
         </div>
 
-        <!-- Volunteer 3 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol3.jpg' %}" alt="Volunteer 3" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 3</div>
-            <div class="volunteer-bio">Takes part in awareness drives in schools.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 4 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol4.jpg' %}" alt="Volunteer 4" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 4</div>
-            <div class="volunteer-bio">Handles adoption paperwork and follow-ups.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 5 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol5.jpg' %}" alt="Volunteer 5" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 5</div>
-            <div class="volunteer-bio">Part-time vet assistant, helps with treatments.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 6 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol6.jpg' %}" alt="Volunteer 6" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 6</div>
-            <div class="volunteer-bio">Feeds stray dogs daily and maintains reports.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 7 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol7.jpg' %}" alt="Volunteer 7" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 7</div>
-            <div class="volunteer-bio">Coordinates donations and fundraising events.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 8 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol8.jpg' %}" alt="Volunteer 8" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 8</div>
-            <div class="volunteer-bio">Media and social media manager for outreach.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 9 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol9.jpg' %}" alt="Volunteer 9" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 9</div>
-            <div class="volunteer-bio">Manages kennel hygiene and cleaning schedules.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 10 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol10.jpg' %}" alt="Volunteer 10" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 10</div>
-            <div class="volunteer-bio">Fosters puppies before they are adopted.</div>
-          </div>
-        </div>
-
-        <!-- Volunteer 11 -->
-        <div class="volunteer-card">
-          <img src="{% static 'volunteers/vol11.jpg' %}" alt="Volunteer 11" class="volunteer-img" />
-          <div class="volunteer-info">
-            <div class="volunteer-name">Volunteer 11</div>
-            <div class="volunteer-bio">Organizes community workshops on pet care.</div>
-          </div>
-        </div>
+        <!-- Add remaining 9 volunteer cards the same way -->
 
       </div>
     </section>

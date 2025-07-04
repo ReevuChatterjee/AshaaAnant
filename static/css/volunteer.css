@@ -1,20 +1,25 @@
+:root {
+  --primary: #FF914D;
+  --bg-light: #fffaf0;
+  --header-bg: #FFF6E5;
+  --card-bg: #ffffff;
+  --text-dark: #333;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
 
-    :root {
-      --primary: #FF914D;
-      --bg-light: #fffaf0;
-      --header-bg: #FFF6E5;
-      --card-bg: #ffffff;
-      --text-dark: #333;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+}
 
-    .navbar {
+/* Navbar */
+.navbar {
   background-color: #ffeac2;
   border-bottom: 2px solid #ffd699;
   margin-top: 0;
@@ -39,15 +44,8 @@
   color: #c1913a;
 }
 
-
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-light);
-    }
-
-    /* Top Header Bar */
-    .hero {
+/* Header */
+.hero {
   background: #fff5e1;
   border-bottom: 1px solid #ffdf99;
   padding: 0.4rem 0;
@@ -73,7 +71,73 @@
   flex: 1;
 }
 
-/* Optional: Make it responsive */
+.logo-fixed {
+  height: 100px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hero-title h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #c1913a;
+}
+
+.hero-title p {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  color: #7c5a28;
+}
+
+/* Volunteers */
+.volunteers-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.volunteers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.volunteer-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+}
+
+.volunteer-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.volunteer-info {
+  padding: 15px;
+}
+
+.volunteer-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.volunteer-bio {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero-flex {
     flex-direction: column;
@@ -85,122 +149,3 @@
     flex: unset;
   }
 }
-
-
-.logo-fixed {
-  height: 100px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.hero-text h1 {
-  font-size: 1.8rem;
-  margin: 0;
-  color: #c1913a;
-}
-
-.hero-text p {
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
-  color: #7c5a28;
-}
-
-    /* Main Content */
-    .main {
-      padding: 2.5rem 2rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
-      color: var(--text-dark);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 1.5rem;
-      box-shadow: var(--shadow);
-      padding: 2rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    input, select, textarea {
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 0.8rem;
-      background: #f9f9f9;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    .full-width {
-      grid-column: 1 / -1;
-    }
-
-    button {
-      margin-top: 2rem;
-      padding: 1rem;
-      width: 100%;
-      font-size: 1.1rem;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 0.8rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #e97c3f;
-    }
-
-    .message {
-      text-align: center;
-      color: green;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header-bar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-      }
-
-      .header-center {
-        margin: 0;
-      }
-    }
-  
