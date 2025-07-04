@@ -1,12 +1,16 @@
 from django.shortcuts import render,redirect
 from .models import RescueDB,CustomUser
 import uuid
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import HttpResponseForbidden
+from django.template.loader import render_to_string
 import os
+from weasyprint import HTML
 from dotenv import load_dotenv
+from django.conf import settings
 load_dotenv()
 
 ALLOWED_SIGNUP_IPS = os.getenv("ALLOWED_SIGNUP_IPS", "").split(",")
@@ -42,6 +46,23 @@ def submitRescueReport(request):
         return render(request, 'rescue.html', {'success': True})
     
     return redirect('rescue')
+
+def export_complaints_pdf(request):
+    reports = RescueDB.objects.all()
+    html_string = render_to_string('export_pdf_template.html', {
+        'reports': reports,
+        'MEDIA_ROOT': settings.MEDIA_ROOT,
+        'MEDIA_URL': settings.MEDIA_URL,
+        'BASE_DIR': settings.BASE_DIR,
+        'request': request,  # for absolute URIs
+    })
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri('/'))
+    pdf_file = html.write_pdf()
+
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="complaints_report.pdf"'
+    return response
 
 @login_required(login_url='stafflogin')
 def view_complaints(request):
