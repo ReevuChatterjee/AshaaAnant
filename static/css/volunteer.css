@@ -79,14 +79,13 @@ body {
   object-fit: contain;
 }
 
-.hero-title h1 {
-  font-size: 1.8rem;
-  margin: 0;
+.hero-title {
+  flex: 2;
+  text-align: center;
 }
 
-.hero-title p {
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
+.hero-spacer {
+  flex: 1;
 }
 
 /* Volunteers */
