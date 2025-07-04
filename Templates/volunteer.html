@@ -5,41 +5,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Volunteer</title>
-  <link rel="stylesheet" href="{% static 'css/volunteer.css'%}" />
+  <link rel="stylesheet" href="{% static 'css/volunteer.css' %}" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content {
+      padding-bottom: 60px;
+    }
+
+    .volunteers-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .volunteers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .volunteer-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .volunteer-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .volunteer-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .volunteer-info {
+      padding: 15px;
+    }
+
+    .volunteer-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .volunteer-bio {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <div class="main-content">
 
-        <!-- Header -->
-        <header class="hero">
-  <div class="container hero-flex">
-    
-    <!-- Logo aligned left -->
-    <div class="hero-logo">
-      <img src="{% static 'images/logo.png' %}" alt="Ashaa Anant Logo" class="logo-fixed" />
-    </div>
+    <!-- Header -->
+    <header class="hero">
+      <div class="container hero-flex">
+        <div class="hero-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Ashaa Anant Logo" class="logo-fixed" />
+        </div>
+        <div class="hero-title">
+          <h1>🐾 Aashaa Anant</h1>
+          <p>Welfare for Dogs and Domesticated Friends</p>
+        </div>
+        <div class="hero-spacer"></div>
+      </div>
+    </header>
 
-    <!-- Title and subtitle centered -->
-    <div class="hero-title">
-      <h1>🐾 Aashaa Anant</h1>
-      <p>Welfare for Dogs and Domesticated Friends</p>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-list container">
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="{% url 'rescue' %}">Rescue</a></li>
+        <li><a href="{% url 'adoption' %}">Adoption</a></li>
+        <li><a href="{% url 'donate' %}">Donate</a></li>
+        <li><a href="{% url 'volunteer' %}">Volunteer</a></li>
+      </ul>
+    </nav>
 
-    <!-- Spacer to balance layout -->
-    <div class="hero-spacer"></div>
+    <!-- Volunteers Grid -->
+    <section class="volunteers-section">
+      <h2>Meet Our Volunteers</h2>
+      <div class="volunteers-grid">
+        {% for i in "1 2 3 4 5 6 7 8 9 10 11".split %}
+        <div class="volunteer-card">
+          <img src="{% static 'images/volunteers/vol'|add:i|add:'.jpg' %}" alt="Volunteer {{ i }}" class="volunteer-img" />
+          <div class="volunteer-info">
+            <div class="volunteer-name">Volunteer {{ i }}</div>
+            <div class="volunteer-bio">Dedicated to caring, rescuing, and loving our furry friends.</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
   </div>
-</header>
-
-        <!-- Navigation -->
-        <nav class="navbar">
-            <ul class="nav-list container">
-            <li><a href="/">Dashboard</a></li>
-            <li><a href="{% url 'rescue' %}">Rescue</a></li>
-            <li><a href="{% url 'adoption' %}">Adoption</a></li>
-            <li><a href="{% url 'donate' %}">Donate</a></li>
-            <li><a href="{% url 'volunteer' %}">Volunteer</a></li>
-            </ul>
-        </nav>
 </body>
 </html>
