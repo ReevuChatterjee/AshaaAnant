@@ -43,8 +43,6 @@ def submitRescueReport(request):
 @login_required(login_url='stafflogin')
 def view_complaints(request):
     reports = RescueDB.objects.all().order_by('-timestamp')
-    obj=RescueDB.objects.first()
-    print(obj.photo.url)
     return render(request, 'view_complaints.html', {'reports': reports})
 
 
